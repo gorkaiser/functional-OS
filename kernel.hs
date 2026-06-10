@@ -1,10 +1,13 @@
+import System.Random (randomIO)
+
+
 main :: IO()
 main = do
 
-  let s0 = False
+  s0 <- randomIO :: Bool
   
-  let s1 = not s0
+  let s1 = not s0 :: Bool
+  
+  let s1Res = if s1 then "True" else "False" :: [Char]
 
-  let res = if s1 then "True" else "False"
-  
-  putStrLn res
+  putStrLn s1Res
